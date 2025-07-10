@@ -25,9 +25,7 @@ function collect () {
     echo "Finished collecting!"
 }
 
-function deploy () {
-    echo "TODO!"
-    
+function deploy () {    
     for files in $Locations
     do
         stored_path="dotfiles"${files#$HOME}
