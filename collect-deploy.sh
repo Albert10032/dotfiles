@@ -1,42 +1,51 @@
 #!/bin/bash
 
 Locations=("
-/home/albert/.bashrc 
-/home/albert/.config/i3/config 
-/home/albert/.config/i3status/config 
-/home/albert/.config/alacritty/alacritty.yml 
-/home/albert/.config/starship.toml
+$HOME/.bashrc  
+$HOME/.config/i3/config 
+$HOME/.config/i3status/config 
+$HOME/.config/alacritty/alacritty.yml 
+$HOME/.config/starship.toml 
+$HOME/.wallpapers/* 
 ")
 
 function collect () {
-    # echo "${Locations[@]}"
     for files in $Locations
     do
         originalpath=$files
-        oneup=$(basename $(dirname $originalpath))
+        target="dotfiles/"${originalpath#$HOME}
+        save_directory_path=$(dirname $target)
 
-        if [ $oneup = "albert" ]; then
-            echo "Collecting ${originalpath}"
-            rsync -a $originalpath dotfiles/
-        else
-            savepath="dotfiles/"$oneup"/"
-            echo "Collecting ${originalpath}"
-            rsync -a $originalpath $savepath
-        fi
+        echo "Collecing ${files}"
+
+        mkdir -p $save_directory_path
+        rsync -a $originalpath $target
 
     done
+    echo "Finished collecting!"
 }
 
 function deploy () {
     echo "TODO!"
+    
+    for files in $Locations
+    do
+        stored_path="dotfiles"${files#$HOME}
+        target=$files
+        target_path=$(dirname $target)
 
+        echo "Deploying ${stored_path}"
+
+        mkdir -p $target_path
+        rsync -a $stored_path $target
+
+    done
+    echo "Finished deploying!"
 }
 
 if [ $1 = "-collect" ]; then
-    echo "Collecting ${Locations[@]}"
     collect
 elif [ $1 = "-deploy" ]; then
-    echo "Deploying ${ls dotfiles/*}"
     deploy
 else
     echo "Input -collect or -deploy to use this script!"
