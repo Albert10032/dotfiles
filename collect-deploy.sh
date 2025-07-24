@@ -7,6 +7,7 @@ $HOME/.config/i3status/config
 $HOME/.config/alacritty/alacritty.yml 
 $HOME/.config/starship.toml 
 $HOME/.wallpapers/* 
+$HOME/.scripts/*
 ")
 
 function collect () {
