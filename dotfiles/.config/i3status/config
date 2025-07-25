@@ -82,4 +82,6 @@ volume master {
 	format = " %volume "
 	format_muted = " %volume "
 	device = "pulse:alsa_output.usb-Creative_Technology_Ltd_Creative_Pebble_Pro_MF1710-01.analog-stereo"
+        # device = $(pactl list sinks | grep "Name" | sed 's/Name: //') 
+        # bollocks, this attempt doesnt work
 }
