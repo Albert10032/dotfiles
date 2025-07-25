@@ -1,3 +1,4 @@
+#  GNU nano 7.2                                               /etc/i3status.conf
 # i3status configuration file.
 # see "man i3status" for documentation.
 
@@ -17,66 +18,60 @@ general {
 	color_bad		= '#e78284'
 }
 
-order += "battery all"
 order += "volume master"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "memory"
+order += "tztime us-e"
 order += "tztime gb"
 order += "tztime local"
 
 wireless _first_ {
-	format_up = "  %essid%quality"
-#	format_down = "W: down"
-#	format_down = ""
-	format_down = ""
+        format_up = " %essid%quality"
+        format_down = ""
 }
 
 ethernet _first_ {
-        format_up = " %ip (%speed)"
-#	format_down = ""
-	format_down = ""
+        format_up = " : %ip (%speed)"
+        format_down = ""
 }
 
 battery all {
-#	last_full_capacity = true
-        format = " %status %percentage "
-	format_down = ""
-	status_chr = ""
-        status_bat = ""
-        status_unk = ""
-        status_full = ""
-	low_threshold = 10
+        format = "%status %percentage %remaining"
 }
 
-memory {
-        format = "  %used | %available"
-}
-
-# Shows only the space assigned to the "/" partition, on this laptop, that excludes the $HOME directory
 disk "/" {
-	format = "Disk space: %free"
-
+        format = " : %avail"
 }
 
 load {
-    format = "[ load: %1min, %5min, %15min ]"
+        format = " : %1min"
 }
 
+memory {
+        format = " %used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
 
 tztime local {
         format = " %Y-%m-%d (%a) %H:%M:%S %Z"
 }
 
 tztime gb {
-	format = " %H:%M (%Z) "
+	format = " %H:%M (%Z)"
 	timezone = "Europe/London"
-	hide_if_equals_localtime = true
+        hide_if_equals_localtime = true
+}
 
+tztime us-e {
+	format = " %H:%M (%Z)"
+	timezone = "America/New_York"
+        hide_if_equals_localtime = true
 }
 
 volume master {
-	format = "  %volume "
-	format_muted = "  %volume "
-	device = "pulse:alsa_output.pci-0000_04_00.6.HiFi__hw_Generic_1__sink"	
+	format = " %volume "
+	format_muted = " %volume "
+	device = "pulse:alsa_output.usb-Creative_Technology_Ltd_Creative_Pebble_Pro_MF1710-01.analog-stereo"
 }

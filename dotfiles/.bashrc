@@ -113,17 +113,18 @@ if ! shopt -oq posix; then
 fi
 
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-export PATH="/home/albert/.local/bin:$PATH"
 
-alias cl="clear && date"
+source ~/.local/share/icons-in-terminal/icons_bash.sh
 
+export PATH=$PATH:/home/albert/bin
+export PATH=$PATH:/home/albert/thunderbird/thunderbird
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/local/go/bin
 
-UNIV=$HOME/Documents/Uni/year2/sem1
-alias cdh="cd $HOME && cl"
-alias cdu="cd $HOME/Documents/Uni/ && cl"
-alias cd..="cd .. && cl"
-# alias seroost=""
 . "$HOME/.cargo/env"
 eval "$(starship init bash)"
 date
 
+# Created by `pipx` on 2025-05-02 10:07:36
+export PATH="$PATH:/home/albert/.local/bin"

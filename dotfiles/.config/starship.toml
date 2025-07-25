@@ -11,10 +11,11 @@ format = "[$user]($style)"
 disabled = false
 show_always = true
 
+
 [hostname]
-style = "green bold"
 ssh_only = false
 format = "[@$hostname]($style)"
+style = "green bold"
 disabled = false
 
 [directory]

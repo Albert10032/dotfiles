@@ -1,12 +1,13 @@
 #!/bin/bash
 
 Locations=("
-$HOME/.bashrc  
-$HOME/.config/i3/config 
-$HOME/.config/i3status/config 
-$HOME/.config/alacritty/alacritty.yml 
-$HOME/.config/starship.toml 
-$HOME/.wallpapers/* 
+$HOME/.bashrc
+$HOME/.bash_aliases
+$HOME/.config/i3/config
+$HOME/.config/i3status/config
+$HOME/.config/alacritty/alacritty.yml
+$HOME/.config/starship.toml
+$HOME/.wallpapers/*
 $HOME/.scripts/*
 ")
 

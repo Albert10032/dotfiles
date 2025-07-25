@@ -28,7 +28,8 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/screen_lock.sh --nofork
+exec_always --no-startup-id xset dpms 0 0 600 &
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/screen_lock_method.sh --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -184,53 +185,41 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-###############################################
-# My own commands:
-#
-# General setup commands;
-###############################################
-
+#############################################################
+# My own commands 
+#############################################################
+# set a wallpaper
+exec_always --no-startup-id feh --bg-fill ~/.wallpapers/milford_sound_2.jpg
+# xbindkeys for the things i havent got hotkeyed here
 exec killall xbindkeys
 exec xbindkeys
-
-exec_always --no-startup-id feh --bg-scale ~/.wallpapers/kyoto.jpg
-
-bindsym $mod+Shift+x exec ~/.scripts/screen_lock.sh
-
-bindsym --release Print exec scrot -e 'mv $f ~/Pictures/Screenshot'
-bindsym --release Shift+Print exec scrot --select -e 'mv $f ~/Pictures/Screenshot'
-
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-
-bindsym $mod+b exec boomer
-
+# pretty lock methodology
+bindsym $mod + Shift + x exec ~/.scripts/screen_lock_method.sh
+bindsym $mod + ctrl + x exec ~/.scripts/screen_lock_method.sh && systemctl suspend
+# screenshots
+bindsym --release Print exec scrot -e 'mv $f ~/Pictures/Screenshots'
+bindsym --release Shift+Print exec scrot --select -e 'mv $f ~/Pictures/Screenshots'
+# This one requires installation of the external program boomer, written by tsoding. 
+# Found here : (https://github.com/tsoding/boomer), and installed to /usr/bin/
+bindsym $mod + b exec boomer
+# move to the scatchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-bindsym $mod+ctrl+x exec ~/.scripts/screen_lock.sh && systemctl suspend
-
-
-###############################################
-# Managing the space between windows;
-###############################################
+#############################################################
+# Managing the space between windows; 
+#############################################################
 
 gaps inner 5
 gaps outer 1
 
-###############################################
+#############################################################
 # Making some pretty colours;
-###############################################
+#############################################################
 
-#set $in-bgcolour	#363636
-#set $text		#ffffff
-#set $text-bar		#ffffff
-#set $u-bgcolour		#ff0000
-#set $indicator		#a8a3c1
-#set $in-text		#969696
-#set $focused		#285577
+set $bar-colour		#00000066
 
-# Catpuccin frappe theme
+# Catpuccin-frappe theme from the ubiquitous catppuccin github https://github.com/catppuccin
 
 set $rosewater #f2d5cf
 set $flamingo #eebebe
@@ -259,9 +248,12 @@ set $base #303446
 set $mantle #292c3c
 set $crust #232634
 
-set $bar-colour		#00000066
+#target				border		background	text		indicator
+client.focused			$blue		$blue		$surface0	$lavender
+client.unfocused		$sapphire	$sapphire	$surface0	$lavender
+client.focused_inactive		$sapphire	$sapphire	$surface0	$lavender
+client.urgent			$red		$red		$surface0	$red
 
-#necessary to enable transparency
 exec_always picom
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -269,21 +261,15 @@ exec_always picom
 bar {
         status_command i3status -c /home/$USER/.config/i3status/config
 	i3bar_command i3bar --transparency
-#	tray_output none
 	font pango: Noto Sans Mono 8
 	colors {
 		background $bar-colour
-		statusline $text-bar
+		statusline $text
 		separator #fefefe
-		#			border		background	text
+		#target			border		background	text
 		focused_workspace	$blue		$blue		$surface0
 		inactive_workspace	$sapphire	$sapphire	$surface0
 		urgent_workspace	$red		$red		$surface0
 	}
 }
 
-#				border		background	text		indicator
-client.focused			$blue		$blue		$surface0	$lavender
-client.unfocused		$sapphire	$sapphire	$surface0	$lavender
-client.focused_inactive		$sapphire	$sapphire	$surface0	$lavender
-client.urgent			$red		$red		$surface0	$red	
