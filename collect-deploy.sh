@@ -27,17 +27,19 @@ function collect () {
     echo "Finished collecting!"
 }
 
+readarray -d '' Storage < <(find dotfiles/ -type f)
+
 function deploy () {    
-    for files in $Locations
+    for files in $Storage
     do
-        stored_path="dotfiles"${files#$HOME}
-        target=$files
+        source=$files
+        target="${HOME}/"${files#*/}
         target_path=$(dirname $target)
-
-        echo "Deploying ${stored_path}"
-
+# 
+        echo "Deploying ${source}"
+# 
         mkdir -p $target_path
-        rsync -a $stored_path $target
+        rsync -a $source $target
 
     done
     echo "Finished deploying!"
