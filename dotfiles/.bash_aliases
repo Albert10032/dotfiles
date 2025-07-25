@@ -1,4 +1,4 @@
-alias ser='cargo run --manifest-path $HOME/.scripts/seroost/Cargo.toml serve $1 '
+alias ser='cargo run --manifest-path /usr/bin/seroost/Cargo.toml serve $1 '
 
 alias cl='clear && date'
 
