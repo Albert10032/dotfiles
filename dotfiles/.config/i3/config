@@ -262,6 +262,7 @@ exec_always picom
 # finds out, if available)
 bar {
         status_command i3status -c /home/$USER/.config/i3status/config
+        # status_command i3status -c "$HOME/.scripts/setstatus.sh"
 	i3bar_command i3bar --transparency
 	font pango: Noto Sans Mono 8
 	colors {
