@@ -189,9 +189,7 @@ bindsym $mod+r mode "resize"
 # My own commands 
 #############################################################
 # set a wallpaper
-# This needs to be changed cause in multi monitor (vertical) wierd clipping occurs that is solved with -Z flag, 
-# but then clipping occurs without the monitor attatched, maybe dynamic scripts that load here and are refreshed on the monitor changing scripts???
-exec_always --no-startup-id feh --bg-fill ~/.wallpapers/milford_sound_2.jpg 
+exec_always --no-startup-id feh --bg-fill ~/.wallpapers/milford_sound_1.jpg
 # xbindkeys for the things i havent got hotkeyed here
 exec killall xbindkeys
 exec xbindkeys

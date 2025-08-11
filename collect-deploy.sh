@@ -50,6 +50,11 @@ function deploy () {
         echo "Laptop specific modifications made!!"
     fi
 
+    i3-msg -q restart
+    i3-msg -q exec nm-applet
+    i3-msg -q exec blueman-applet
+    i3-msg -q exec ibus-daemon
+
     echo "Finished deploying!"
 }
 
