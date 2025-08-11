@@ -29,19 +29,27 @@ function collect () {
 
 readarray -d '' Storage < <(find dotfiles/ -type f)
 
+
+# TODO: on the deploy function, create 2 versions of the i3status config (for laptop and desktop), 
+# then on deployment deploy both and rename them based on hostname
 function deploy () {    
     for files in $Storage
     do
         source=$files
         target="${HOME}/"${files#*/}
         target_path=$(dirname $target)
-# 
+
         echo "Deploying ${source}"
-# 
+
         mkdir -p $target_path
         rsync -a $source $target
-
     done
+    
+    if [ $HOSTNAME = 'alberts-laptop' ]; then
+        mv $HOME/.config/i3status/config-laptop $HOME/.config/i3status/config
+        echo "Laptop specific modifications made!!"
+    fi
+
     echo "Finished deploying!"
 }
 

@@ -4,3 +4,4 @@ i3-msg restart
 # I dont quite know why, but the above restart command fails to actually restart the applets, so manually restarted here
 i3-msg exec nm-applet
 i3-msg exec blueman-applet
+i3-msg exec ibus-daemon

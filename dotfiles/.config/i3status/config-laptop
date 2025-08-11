@@ -12,17 +12,17 @@ general {
         colors = true
 	markup = pango
 	separator = ''
-        # interval = 5
+        interval = 5
 	color_good		= '#a6d189'
 	color_degraded		= '#e5c890'
 	color_bad		= '#e78284'
 }
 
+order+= "battery all"
 order += "volume master"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "memory"
-order += "tztime us-e"
 order += "tztime gb"
 order += "tztime local"
 
@@ -34,6 +34,17 @@ wireless _first_ {
 ethernet _first_ {
         format_up = " : %ip (%speed)"
         format_down = ""
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+        format_down = ""
+                format = " %status %percentage "
+	status_chr = ""
+        status_bat = ""
+        status_unk = ""
+        status_full = ""
+	low_threshold = 10
 }
 
 disk "/" {
@@ -69,5 +80,5 @@ tztime us-e {
 volume master {
 	format = " %volume "
 	format_muted = " %volume "
-	device = "pulse:alsa_output.usb-Creative_Technology_Ltd_Creative_Pebble_Pro_MF1710-01.analog-stereo"
+	device = "pulse:alsa_output.pci-0000_04_00.6.HiFi__hw_Generic_1__sink"
 }
