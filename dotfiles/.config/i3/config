@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 # My own commands 
 #############################################################
 # set a wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.wallpapers/milford_sound_1.jpg
+exec_always --no-startup-id feh --bg-fill ~/.wallpapers/mandlebrot-wallpaper.png
 # xbindkeys for the things i havent got hotkeyed here
 exec killall xbindkeys
 exec xbindkeys
@@ -205,6 +205,9 @@ bindsym $mod + b exec boomer
 # move to the scatchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 #############################################################
 # Managing the space between windows; 
