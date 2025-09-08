@@ -9,6 +9,7 @@ $HOME/.config/alacritty/alacritty.yml
 $HOME/.config/starship.toml
 $HOME/.wallpapers/*
 $HOME/.scripts/*
+$HOME/.doc_templates/*
 ")
 
 function collect () {
