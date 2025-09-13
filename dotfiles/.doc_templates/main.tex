@@ -4,7 +4,10 @@
 \usepackage{setspace}
 \doublespacing
 \usepackage{xcolor}
-\usepackage{graphicx} 
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage[backend=bibtex, style=verbose]{biblatex}
@@ -16,6 +19,12 @@
 \newcommand\ceil[1]{\lceil#1\rceil}
 \newcommand\floor[1]{\lfloor#1\rfloor}
 \newcommand\todo[1]{\textcolor{red}{#1}}
+\newcommand\thm[1]{\textbf{Theorem: } #1\\}
+\newcommand\lem[1]{\textbf{Lemma: } #1\\}
+\newcommand\cor[1]{\textbf{Corollary: } #1\\}
+\newcommand\rmk[1]{\textbf{Remark: } #1\\}
+\newcommand\prf[1]{\textbf{Proof: } #1\\}
+\newcommand\ep{\hfill\square}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 
