@@ -7,6 +7,7 @@ $HOME/.config/i3/config
 $HOME/.config/i3status/config
 $HOME/.config/alacritty/alacritty.yml
 $HOME/.config/starship.toml
+$HOME/.tmux.conf
 $HOME/.wallpapers/*
 $HOME/.scripts/*
 $HOME/.doc_templates/*
