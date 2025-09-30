@@ -9,6 +9,7 @@
 \usepackage{tikz}
 \usepackage{multicol}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage[backend=bibtex, style=verbose]{biblatex}
 \addbibresource{bibliography.bib}
@@ -26,8 +27,10 @@
 \newcommand\prf[1]{\textbf{Proof: } #1\\}
 \newcommand\ep{\hfill\square}
 
-\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\renewcommand{\thesubsubsection}{\thesection.\alph{subsection}.\roman{subsubsection}}
+\renewcommand{\thesection}{Week \arabic{section}}
+\renewcommand{\thesubsection}{\thesection\hspace*{1.5pt}-\hspace*{1.5pt}Lecture \arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection\hspace*{1.5pt}-\hspace*{1.5pt}\roman{subsubsection}}
+
 
 \begin{document}
 

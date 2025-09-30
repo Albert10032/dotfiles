@@ -8,6 +8,12 @@ function latex_doc () {
     echo "DOCUMENT"
 }
 
+function latex_notes () {
+    cp $HOME/.doc_templates/notes.tex $PWD
+    cp $HOME/.doc_templates/bibliography.bib $PWD
+    echo "NOTES"
+}
+
 function latex_presentation () {
     cp $HOME/.doc_templates/presentation.tex $PWD
     cp $HOME/.doc_templates/bibliography.bib $PWD
@@ -16,8 +22,10 @@ function latex_presentation () {
 
 if [ $1 = "-doc" ]; then
     latex_doc
+elif [ $1 = "-notes" ]; then
+    latex_notes
 elif [ $1 = "-pres" ]; then
     latex_presentation
 else
-    echo "use -doc or -pres with this script!"
+    echo "use -doc, -notes, or -pres with this script!"
 fi
