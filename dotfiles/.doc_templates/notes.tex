@@ -14,12 +14,19 @@
 \usepackage[backend=bibtex, style=verbose]{biblatex}
 \addbibresource{bibliography.bib}
 
+% symbols
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
 \newcommand\abs[1]{\hspace*{2.5pt}\left|#1\right|}
 \newcommand\bracket[1]{\left(#1\right)}
 \newcommand\ceil[1]{\lceil#1\rceil}
 \newcommand\floor[1]{\lfloor#1\rfloor}
-\newcommand\todo[1]{\textcolor{red}{#1}}
+\newcommand\NN{\mathbb{N}}
+\newcommand\ZZ{\mathbb{Z}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand\RR{\mathbb{R}}
+\newcommand\CC{\mathbb{C}}
+
+% regions
 \newcommand\thm[1]{\textbf{Theorem: } #1\\}
 \newcommand\lem[1]{\textbf{Lemma: } #1\\}
 \newcommand\cor[1]{\textbf{Corollary: } #1\\}
@@ -27,13 +34,15 @@
 \newcommand\prf[1]{\textbf{Proof: } #1\\}
 \newcommand\ep{\hfill\square}
 
+% misc / editing
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+% formatting
 \renewcommand{\thesection}{Week \arabic{section}}
 \renewcommand{\thesubsection}{\thesection\hspace*{1.5pt}-\hspace*{1.5pt}Lecture \arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection\hspace*{1.5pt}-\hspace*{1.5pt}\roman{subsubsection}}
 
-
 \begin{document}
-
 	\title{}
 	\author{}
 	\date{\today}

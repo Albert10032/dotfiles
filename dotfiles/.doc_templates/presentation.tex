@@ -4,17 +4,41 @@
 \usepackage{lmodern}
 \usetheme{Boadilla}
 
-
 \usepackage{xcolor}
 \usepackage{graphicx} 
-\usepackage{amsmath}
-\usepackage{amsfonts}
 \usepackage{circuitikz}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
 \usepackage[backend=bibtex, style=alphabetic]{biblatex}
 \addbibresource{bib.bib}
 
+% symbols
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand\abs[1]{\hspace*{2.5pt}\left|#1\right|}
+\newcommand\bracket[1]{\left(#1\right)}
+\newcommand\ceil[1]{\lceil#1\rceil}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand\NN{\mathbb{N}}
+\newcommand\ZZ{\mathbb{Z}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand\RR{\mathbb{R}}
+\newcommand\CC{\mathbb{C}}
 
+% regions
+\newcommand\thm[1]{\textbf{Theorem: } #1\\}
+\newcommand\lem[1]{\textbf{Lemma: } #1\\}
+\newcommand\cor[1]{\textbf{Corollary: } #1\\}
+\newcommand\rmk[1]{\textbf{Remark: } #1\\}
+\newcommand\prf[1]{\textbf{Proof: } #1\\}
+\newcommand\ep{\hfill\square}
+
+% misc / editing
+\newcommand\todo[1]{\textcolor{red}{#1}}
 
 \begin{document}
 	\author{}
