@@ -16,6 +16,7 @@
 
 % symbols
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand\snorm[1]{\norm{#1}_\infty}
 \newcommand\abs[1]{\hspace*{2.5pt}\left|#1\right|}
 \newcommand\bracket[1]{\left(#1\right)}
 \newcommand\ceil[1]{\lceil#1\rceil}
@@ -25,6 +26,8 @@
 \newcommand\QQ{\mathbb{Q}}
 \newcommand\RR{\mathbb{R}}
 \newcommand\CC{\mathbb{C}}
+\newcommand\KK{\mathbb{K}}
+\newcommand\conv[1]{\text{conv}\bracket{#1}}
 
 % regions
 \newcommand\thm[1]{\textbf{Theorem: } #1\\}
@@ -35,7 +38,7 @@
 \newcommand\ep{\hfill\square}
 
 % misc / editing
-\newcommand\todo[1]{\textcolor{red}{#1}}
+\newcommand\todo[1]{\textcolor{red}{TODO: #1 \\}}
 
 % formatting
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
