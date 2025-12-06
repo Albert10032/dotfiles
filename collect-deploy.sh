@@ -3,9 +3,10 @@
 Locations=("
 $HOME/.bashrc
 $HOME/.bash_aliases
+$HOME/.bash_profile
 $HOME/.config/i3/config
 $HOME/.config/i3status/config
-$HOME/.config/alacritty/alacritty.yml
+$HOME/.config/alacritty/alacritty.toml
 $HOME/.config/starship.toml
 $HOME/.config/autorandr/*
 $HOME/.tmux.conf
@@ -48,7 +49,7 @@ function deploy () {
         rsync -a $source $target
     done
     
-    if [ $HOSTNAME = 'alberts-laptop' ]; then
+    if [ $HOSTNAME = 'riemann' ]; then
         mv $HOME/.config/i3status/config-laptop $HOME/.config/i3status/config
         echo "Laptop specific modifications made!!"
     fi

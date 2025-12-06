@@ -122,7 +122,7 @@ export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/bin
 export PATH=$PATH:/usr/local/go/bin
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 eval "$(starship init bash)"
 date
 
