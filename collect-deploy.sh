@@ -9,6 +9,7 @@ $HOME/.config/i3status/config
 $HOME/.config/alacritty/alacritty.toml
 $HOME/.config/starship.toml
 $HOME/.config/autorandr/*
+$HOME/.config/nvim/*
 $HOME/.tmux.conf
 $HOME/.wallpapers/*
 $HOME/.scripts/*
