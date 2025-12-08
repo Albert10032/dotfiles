@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 # My own commands 
 #############################################################
 # set a wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.wallpapers/mandlebrot-wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/.wallpapers/milford_sound_nz.png
 # xbindkeys for the things i havent got hotkeyed here
 exec killall xbindkeys
 exec xbindkeys
@@ -213,8 +213,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 # Managing the space between windows; 
 #############################################################
 
-gaps inner 5
-gaps outer 1
+gaps inner 0
+gaps outer 0
 
 #############################################################
 # Making some pretty colours;
