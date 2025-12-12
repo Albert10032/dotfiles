@@ -33,12 +33,12 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/screen_
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5 --max-volume 100 && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5 --max-volume 100 && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 # My own commands 
 #############################################################
 # set a wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.wallpapers/milford_sound_nz.png
+exec_always --no-startup-id feh --bg-fill ~/.wallpapers/milford_sound_nz.jpg
 # xbindkeys for the things i havent got hotkeyed here
 exec killall xbindkeys
 exec xbindkeys
