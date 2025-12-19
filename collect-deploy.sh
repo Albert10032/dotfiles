@@ -56,9 +56,9 @@ function deploy () {
     fi
 
     i3-msg -q restart
-    i3-msg -q exec nm-applet
-    i3-msg -q exec blueman-applet
-    i3-msg -q exec ibus-daemon
+#    i3-msg -q exec nm-applet
+#    i3-msg -q exec blueman-applet
+#    i3-msg -q exec ibus-daemon
 
     echo "Finished deploying!"
 }
