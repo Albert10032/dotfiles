@@ -3,6 +3,7 @@ alias ser='cargo run --manifest-path /usr/bin/seroost/Cargo.toml serve $1 '
 alias cl='clear && date'
 
 alias texinit='$HOME/.scripts/latex_init.sh'
+alias gbs='$HOME/.scripts/gbs.sh'
 
 alias cdh='cd $HOME && cl'
 UNIV=$HOME/Documents/Uni/year2/sem2
