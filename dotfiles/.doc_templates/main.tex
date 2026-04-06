@@ -2,12 +2,15 @@
 
 \usepackage{fullpage}
 \usepackage{setspace}
-\doublespacing
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{todonotes}
 \usepackage{multicol}
+\usepackage{faktor}
+\doublespacing
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -23,11 +26,13 @@
 \newcommand\floor[1]{\lfloor#1\rfloor}
 \newcommand\NN{\mathbb{N}}
 \newcommand\ZZ{\mathbb{Z}}
+\newcommand\PP{\mathbb{P}}
 \newcommand\QQ{\mathbb{Q}}
 \newcommand\RR{\mathbb{R}}
 \newcommand\CC{\mathbb{C}}
 \newcommand\KK{\mathbb{K}}
 \newcommand\conv[1]{\text{conv}\bracket{#1}}
+\DeclareMathOperator{\Ima}{Im}
 
 % regions
 \newcommand\thm[1]{\textbf{Theorem: } #1\\}
@@ -37,8 +42,6 @@
 \newcommand\prf[1]{\textbf{Proof: } #1\\}
 \newcommand\ep{\hfill\square}
 
-% misc / editing
-\newcommand\todo[1]{\textcolor{red}{TODO: #1 \\}}
 
 % formatting
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
