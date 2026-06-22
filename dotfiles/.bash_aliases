@@ -6,12 +6,12 @@ alias texinit='$HOME/.scripts/latex_init.sh'
 alias gbs='$HOME/.scripts/gbs.sh'
 
 alias cdh='cd $HOME && cl'
-UNIV=$HOME/Uni/year3/sem1
+UNIV=$HOME/Uni/year3/sem2
 alias cdu='cd $UNIV && cl'
-alias cda='cd $UNIV/GOVT3671 && cl'
-alias cdr='cd $UNIV/MATH3962 && cl'
-alias cdc='cd $UNIV/MATH3979 && cl'
-alias cds='cd $UNIV/summaries && cl'
+alias cda='cd $UNIV/GOVT3672 && cl'
+alias cdd='cd $UNIV/MATH3968 && cl'
+alias cdm='cd $UNIV/MATH3969 && cl'
+alias cds='cd $UNIV/summary && cl'
 
 alias cd..='cd ..'
 alias cd~='cd ~'
