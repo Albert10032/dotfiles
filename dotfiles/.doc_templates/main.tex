@@ -17,10 +17,11 @@
 \usepackage[backend=bibtex, style=verbose]{biblatex}
 \addbibresource{bibliography.bib}
 
-% symbols
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
 \newcommand\abs[1]{\hspace*{2.5pt}\left|#1\right|}
 \newcommand\bracket[1]{\left(#1\right)}
+\newcommand\abracket[1]{\langle#1\rangle}
+\newcommand\ip[2]{\abracket{#1 , #2}}
 \newcommand\ceil[1]{\lceil#1\rceil}
 \newcommand\floor[1]{\lfloor#1\rfloor}
 \DeclareMathOperator{\NN}{\mathbb{N}}
@@ -37,17 +38,41 @@
 \DeclareMathOperator{\Char}{Char}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Res}{Res}
 \DeclareMathOperator{\pv}{\textit{p.v.}}
+\DeclareMathOperator{\const}{\textit{const}}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Frob}{\mathcal{F}}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\mapsfrom}{\reflectbox{$\mapsto$}}
+\DeclareMathOperator{\Disc}{\mathcal{D}}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\cA}{\mathcal{A}}
+\DeclareMathOperator{\cB}{\mathcal{B}}
+\DeclareMathOperator{\cC}{\mathcal{C}}
+\DeclareMathOperator{\cU}{\mathcal{U}}
+\DeclareMathOperator{\cV}{\mathcal{V}}
+\DeclareMathOperator{\cW}{\mathcal{W}}
+\DeclareMathOperator{\cX}{\mathcal{X}}
+\DeclareMathOperator{\cY}{\mathcal{Y}}
+\DeclareMathOperator{\Pow}{\mathcal{P}}
+
 
 % regions
-\newcommand\thm[1]{\textbf{Theorem: } #1\\}
-\newcommand\lem[1]{\textbf{Lemma: } #1\\}
-\newcommand\cor[1]{\textbf{Corollary: } #1\\}
+\newcommand\thm[2]{\textbf{Theorem: #1}\\ #2\\}
+\newcommand\lem[2]{\textbf{Lemma: #1}\\ #2\\}
+\newcommand\cor[2]{\textbf{Corollary: #1}\\ #2\\}
 \newcommand\rmk[1]{\textbf{Remark: } #1\\}
-\newcommand\prf[1]{\textbf{Proof: } #1\\}
-\newcommand\ep{\hfill\square}
+\newcommand\prf[2]{\textbf{Proof: #1}\\ #2\ep\\}
+\newcommand\ep{\hfill\square\\}
 
 
 % formatting
