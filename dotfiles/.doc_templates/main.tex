@@ -10,7 +10,6 @@
 \usepackage{todonotes}
 \usepackage{multicol}
 \usepackage{faktor}
-\doublespacing
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -29,6 +28,7 @@
 \DeclareMathOperator{\PP}{\mathbb{P}}
 \DeclareMathOperator{\QQ}{\mathbb{Q}}
 \DeclareMathOperator{\RR}{\mathbb{R}}
+\DeclareMathOperator{\RRbar}{\overline{\RR}}
 \DeclareMathOperator{\CC}{\mathbb{C}}
 \DeclareMathOperator{\CCbar}{\overline{\CC}}
 \DeclareMathOperator{\KK}{\mathbb{K}}
@@ -64,15 +64,22 @@
 \DeclareMathOperator{\cX}{\mathcal{X}}
 \DeclareMathOperator{\cY}{\mathcal{Y}}
 \DeclareMathOperator{\Pow}{\mathcal{P}}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\one}{\mathbf{1}}
+\newcommand\rom[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 
+\DeclareMathOperator{\rone}{\rom{1}}
+\DeclareMathOperator{\rtwo}{\rom{2}}
 
 % regions
-\newcommand\thm[2]{\textbf{Theorem: #1}\\ #2\\}
-\newcommand\lem[2]{\textbf{Lemma: #1}\\ #2\\}
-\newcommand\cor[2]{\textbf{Corollary: #1}\\ #2\\}
-\newcommand\rmk[1]{\textbf{Remark: } #1\\}
-\newcommand\prf[2]{\textbf{Proof: #1}\\ #2\ep\\}
-\newcommand\ep{\hfill\square\\}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{eg}[thm]{Example}
 
 
 % formatting
